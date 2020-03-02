@@ -198,87 +198,28 @@ if(checkuser == true) {
 
 	edit: (req, res) => {
 		// Do the magic
-		let log1 = req.session.login; 
-		let userid = req.session.userid;
-
-		let user = usersf.find(function (p) {
-			return p.id == userid
-		})
-
-		res.render('useredit', {
-			user: user,
-			login: log1,
-		})
-
+		db.Usuarios.finByPk(req.params.id)
+			.then(function(usuario){
+				res.render("useredit",
+				{usuario:usuario});
+			})
+		
 	},
 
 	update: (req, res, next) => {
-		
-		let userid2 = req.params.id;
-		
-		let userlist = usersf.filter(function (m) {
-			return m.id != userid2;
-		   });
-
-
-
-
-		let selectuser = usersf.filter(function (m) {
-			return m.id == userid2;
-		   });
-
-		  
-			
-
-
-			if(req.files.length <1){
-		
-				var modificar = [
-					{
-						"id": userid2,
-						"name": req.body.firstname,
-						"lastname": req.body.lastname,
-						"email": selectuser[0].email,
-						"password": selectuser[0].password,
-						"avatar": selectuser[0].avatar,
-						"category": selectuser[0].category
-						
-					   }
-				
-				
-				
-				]
-		
-			}else {
-				
-		
-				var modificar = [
-					{
-						"id": userid2,
-						"name": req.body.firstname,
-						"lastname": req.body.lastname,
-						"email": selectuser[0].email,
-						"password": selectuser[0].password,
-						"avatar": req.files[0].filename,
-						"category": selectuser[0].category
-						
-					   }
-				
-				
-				
-				]
-	
+		db.Usuarios.update({
+			nombre: req.body.nombre,
+			lastname: req.body.lastname,
+			email: req.body.email,
+			password: req.body.password,
+			avatar: req.body.avatar,
+			category: req.body.category
+		}, {
+			where:{
+				id:req.params.id
 			}
-
-
-
-
+		})
 		
-			let union = [...userlist, ...modificar];
-			
-			let data = JSON.stringify(union);
-			fs.writeFileSync(usersFilePath, data);	   
-
 			res.redirect('/');		
 
 
