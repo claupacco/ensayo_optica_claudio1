@@ -1,0 +1,57 @@
+
+.padre{
+
+	display: flex;
+	
+	
+}
+
+.car{
+
+    display: none;
+}
+
+.casilla{
+    width: 25px;
+    height: 20px;   
+}
+
+
+.preview {
+    width:640px;
+    height:360px}
+    
+    .thumb {
+    width:205px;
+    margin-right:3px;}
+    
+    .normal {
+    border:3px solid #000000;}
+    
+    .selected {
+    border:3px solid #ff0000;}
+
+
+@media all and (max-width: 600px){
+
+        .fotos{
+            display: none;
+        }
+
+        .foto-central{
+            display: none;
+        }
+
+        .car{
+            display: flex;
+
+
+        }
+
+        .padre{
+
+            flex-direction: column;
+        }
+        
+
+

@@ -1,0 +1,39 @@
+/* Slider */
+.carousel-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.d-block {
+    margin: 0 auto;
+}
+.carousel-indicators li{
+    background: lightgray;
+}
+.carousel-container h2 {
+    text-align: center;
+}
+/* Productos */
+.article-box {
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 300ms;
+    margin: 20px 0;
+}
+.article-box a {
+    display: block;
+}
+.article-data {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.imagen-producto {
+    width: 100%;
+}
+.button-container {
+    position: relative;
+    left: 40%
+}

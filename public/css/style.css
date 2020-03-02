@@ -1,0 +1,63 @@
+/* generales */
+* {
+    padding: 0px;
+    box-sizing: border-box;
+    }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+h2 {
+    text-align: center;
+}
+/* Header */
+.logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sesion {
+    text-align: end;
+}
+.nav-bar li {
+    background-color: lightgray;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid black;
+}
+.nav-bar li a {
+    color: black;
+}
+.buscador-carrito{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.carrito i {
+    color:black;
+}
+/* Footer */
+footer {
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
+.contact-bar{
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact-container {
+    margin-top: 20px;
+    align-items: center;
+}
+.contact-bar li {
+    text-align: center;
+}
+.footer-row {
+    justify-content: center;
+}

@@ -1,0 +1,30 @@
+
+.padre{
+
+	display: flex;
+	
+	
+}
+
+.car{
+
+    display: none;
+}
+
+.casilla{
+    width: 25px;
+    height: 20px;   
+}
+
+
+
+
+@media all and (max-width: 600px){
+
+        .Title{
+            display: none;
+        }
+
+       
+
+
